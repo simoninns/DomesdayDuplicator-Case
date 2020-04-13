@@ -58,30 +58,42 @@ module m3_standoffc(x,y,z)
     }
 }
 
-module render_text()
+module render_text_cutouts()
 {
-        move([0,0,60]) {
-            // Text for the RF input
-            move([12.5,13 - 0.001,-38]) {
-                rotate([90,0,0]) linear_extrude(1) {
-                    text("RF IN", font = "Liberation Sans:style=Bold", size = 4, valign = "center", halign="center");
-                }
-            }
-
-            // Text for the USB3 connector
-            move([73.25,89 + 0.001,-26]) {
-                rotate([90,0,180]) linear_extrude(1) {
-                    text("USB3", font = "Liberation Sans:style=Bold", size = 4, valign = "center", halign="center");
-                }
-            }
-
-            // Website address
-            move([69.5,1 - 0.001,-58]) {
-                rotate([90,0,0]) linear_extrude(1) {
-                    text("www.domesday86.com", font = "Liberation Sans:style=Bold", size = 4, valign = "center", halign="center");
-                }
+    move([0,0,60]) {
+        // Text for the RF input
+        move([13,12.5,-38]) {
+            rotate([90,0,0]) linear_extrude(0.7) {
+                text("RF IN", font = "Liberation Sans:style=Bold", size = 4, valign = "center", halign="center");
             }
         }
+
+        // Text for the USB3 connector
+        move([74.5,89.5,-26]) {
+            rotate([90,0,180]) linear_extrude(0.7) {
+                text("USB3", font = "Liberation Sans:style=Bold", size = 4, valign = "center", halign="center");
+            }
+        }
+
+        // Website address
+        move([69.5,.5,-58]) {
+            rotate([90,0,0]) linear_extrude(0.7) {
+                text("www.domesday86.com", font = "Liberation Sans:style=Bold", size = 4, valign = "center", halign="center");
+            }
+        }
+    }
+}
+
+module render_text()
+{
+    move([0,0,60]) {
+        // Website address
+        move([69.5,0.6,-58]) {
+            rotate([90,0,0]) linear_extrude(0.6) {
+                text("www.domesday86.com", font = "Liberation Sans:style=Bold", size = 4, valign = "center", halign="center");
+            }
+        }
+    }
 }
 
 // Reccess for case clip
@@ -136,7 +148,7 @@ module render_lower_case()
                 move([70 - 2,87,41 - 2]) cuboid([9 + 4,4,14], center = false);
 
                 // Text cutouts
-                render_text();
+                render_text_cutouts();
             }
 
             // Draw the case clips

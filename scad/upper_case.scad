@@ -89,14 +89,14 @@ module render_upper_case()
 
     // Lip around lid
     move([0,0,0]) {
-        material(2) difference() {
+        material(3) difference() {
             union() {
                 move([34 + 2,0 + 2,-8]) cuboid([71 - 4,90 - 4,4], center = false, fillet = 4, edges = EDGE_FR_LF+EDGE_FR_RT+EDGE_BK_LF+EDGE_BK_RT);
                 move([-2 + 2, 12 + 2, -8]) cuboid([40 + 5 - 4,90 - 24 - 4,4], center = false, fillet = 4, edges = EDGE_FR_LF+EDGE_FR_RT+EDGE_BK_LF+EDGE_BK_RT);
             }
 
-            move([34 + 4,0 + 4,-8.05]) cuboid([71 - 8,90 - 8,3.1], center = false, fillet = 4, edges = EDGE_FR_LF+EDGE_FR_RT+EDGE_BK_LF+EDGE_BK_RT);
-            move([-2 + 4, 12 + 4, -8.05]) cuboid([40 + 5 - 8,90 - 24 - 8,3.1], center = false, fillet = 4, edges = EDGE_FR_LF+EDGE_FR_RT+EDGE_BK_LF+EDGE_BK_RT);
+            move([34 + 4,0 + 4,-9]) cuboid([71 - 8,90 - 8,6], center = false, fillet = 4, edges = EDGE_FR_LF+EDGE_FR_RT+EDGE_BK_LF+EDGE_BK_RT);
+            move([-2 + 4, 12 + 4, -9]) cuboid([40 + 5 - 8,90 - 24 - 8,6], center = false, fillet = 4, edges = EDGE_FR_LF+EDGE_FR_RT+EDGE_BK_LF+EDGE_BK_RT);
         }
     }
 
@@ -108,7 +108,7 @@ module render_upper_case()
     }
     
     // Draw the case clips
-    material(2) {
+    material(3) {
         move([49,2.5,-6]) case_clip();
         move([90,2.5,-6]) case_clip();
 
